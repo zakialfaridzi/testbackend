@@ -167,11 +167,14 @@
                                 <label for="fotopegawai">Foto Pegawai</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input @error('fotopegawai') is-invalid @enderror" id="fotopegawai" name="fotopegawai">
-                                        <label class="custom-file-label" for="fotopegawai">Choose file</label>
+                                        <input type="file"
+                                            class="custom-file-input @error('fotopegawai') is-invalid @enderror"
+                                            id="fotopegawai" name="fotopegawai">
+                                        <label class="custom-file-label" for="fotopegawai"
+                                            onchange="previewImage()">Choose file</label>
                                     </div>
                                 </div>
-								@error('fotopegawai')
+                                @error('fotopegawai')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

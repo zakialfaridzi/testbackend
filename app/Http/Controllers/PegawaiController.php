@@ -134,10 +134,25 @@ class PegawaiController extends Controller
 			'telpon' => 'required|numeric',
 			'alamat' => 'required|min:3|max:300',
 			'status_nikah' => 'required',
+			'fotopegawai' => 'required|image|max:5000'
 		]);
 
 		$pegawaiId = \App\Models\Pegawai::find($id);
-		$pegawaiId->update($request->all());
+		$pegawaiId->update([
+			'id_divisi' => $request->id_divisi,
+			'nip' => $request->nip,
+			'nik' => $request->nik,
+			'nama' => $request->nama,
+			'email' => $request->email,
+			'jenis_kelamin' => $request->jenis_kelamin,
+			'tempat_lahir' => $request->tempat_lahir,
+			'tanggal_lahir' => $request->tanggal_lahir,
+			'telpon' => $request->telpon,
+			'alamat' => $request->alamat,
+			'status_nikah' => $request->status_nikah,
+			'fotopegawai' => $request->file('fotopegawai')->store('fotoPegawai', 'public')
+		]);
+
 		return redirect()->route('pegawai.index')->with('success', 'Data pegawai berhasil diubah!');;
     }
 
@@ -149,6 +164,10 @@ class PegawaiController extends Controller
      */
     public function destroy($id)
     {
+		if (\App\Models\Pegawai::find($id)->fotopegawai) {
+			\Storage::delete(\App\Models\Pegawai::find($id)->fotopegawai);
+		}
+
 		$pegawaiId = \App\Models\Pegawai::find($id);
 		$pegawaiId->delete();
 		return redirect()->route('pegawai.index')->with('success', 'Data pegawai berhasil dihapus!');;

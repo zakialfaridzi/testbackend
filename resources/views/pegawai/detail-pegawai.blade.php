@@ -84,7 +84,7 @@
                                                 <img src="{{ asset('storage/' . $pegawaiId->fotopegawai) }}" width="400px"
                                                     height="600px" class="img-thumbnail" alt="foto pegawai">
                                             @else
-                                                <img src="https://source.unsplash.com/400x600/?portrait"
+                                                <img src="{{ asset('img-placeholder.png') }}"
                                                     class="img-thumbnail">
                                             @endif
                                         </td>
