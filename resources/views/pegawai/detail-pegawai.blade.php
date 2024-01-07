@@ -77,6 +77,18 @@
                                         <th>Divisi</th>
                                         <td>{{ $pegawaiId->divisi->nama }}</td>
                                     </tr>
+                                    <tr>
+                                        <th>Foto Pegawai</th>
+                                        <td>
+                                            @if ($pegawaiId->fotopegawai != null)
+                                                <img src="{{ asset('storage/' . $pegawaiId->fotopegawai) }}" width="400px"
+                                                    height="600px" class="img-thumbnail" alt="foto pegawai">
+                                            @else
+                                                <img src="https://source.unsplash.com/400x600/?portrait"
+                                                    class="img-thumbnail">
+                                            @endif
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

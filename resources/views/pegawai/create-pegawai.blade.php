@@ -30,13 +30,13 @@
 
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('pegawai.save-pegawai') }}" method="post">
+                        <form action="{{ route('pegawai.save-pegawai') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="inputName">Nama Pegawai</label>
                                 <input type="text" id="inputName" name="nama"
-                                    class="form-control @error('nama') is-invalid @enderror"
-                                    placeholder="Nama Pegawai" value="{{ old('nama') }}">
+                                    class="form-control @error('nama') is-invalid @enderror" placeholder="Nama Pegawai"
+                                    value="{{ old('nama') }}">
                                 @error('nama')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -56,9 +56,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputNIP">NIP</label>
-                                <input type="text" id="inputNIP" name="nip" class="form-control @error('nip') is-invalid @enderror"
-                                    placeholder="NIP Pegawai" value="{{ old('nip') }}">
-									@error('nip')
+                                <input type="text" id="inputNIP" name="nip"
+                                    class="form-control @error('nip') is-invalid @enderror" placeholder="NIP Pegawai"
+                                    value="{{ old('nip') }}">
+                                @error('nip')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -66,9 +67,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputNIK">NIK</label>
-                                <input type="text" id="inputNIK" name="nik" class="form-control @error('nik') is-invalid @enderror"
-                                    placeholder="NIK Pegawai" value="{{ old('nik') }}">
-									@error('nik')
+                                <input type="text" id="inputNIK" name="nik"
+                                    class="form-control @error('nik') is-invalid @enderror" placeholder="NIK Pegawai"
+                                    value="{{ old('nik') }}">
+                                @error('nik')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -76,9 +78,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputTempatLahir">Tempat Lahir</label>
-                                <input type="text" id="inputTempatLahir" name="tempat_lahir" class="form-control @error('tempat_lahir') is-invalid @enderror"
+                                <input type="text" id="inputTempatLahir" name="tempat_lahir"
+                                    class="form-control @error('tempat_lahir') is-invalid @enderror"
                                     placeholder="Tempat Lahir" value="{{ old('tempat_lahir') }}">
-									@error('tempat_lahir')
+                                @error('tempat_lahir')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -86,8 +89,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputTanggalLahir">Tanggal Lahir</label>
-                                <input type="date" id="inputTanggalLahir" name="tanggal_lahir" class="form-control @error('tanggal_lahir') is-invalid @enderror" value="{{ old('tanggal_lahir') }}">
-								@error('tanggal_lahir')
+                                <input type="date" id="inputTanggalLahir" name="tanggal_lahir"
+                                    class="form-control @error('tanggal_lahir') is-invalid @enderror"
+                                    value="{{ old('tanggal_lahir') }}">
+                                @error('tanggal_lahir')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -95,8 +100,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputAlamat">Alamat</label>
-                                <textarea id="inputAlamat" name='alamat' class="form-control @error('alamat') is-invalid @enderror" rows="4" placeholder="Alamat">{{ old('alamat') }}</textarea>
-								@error('alamat')
+                                <textarea id="inputAlamat" name='alamat' class="form-control @error('alamat') is-invalid @enderror" rows="4"
+                                    placeholder="Alamat">{{ old('alamat') }}</textarea>
+                                @error('alamat')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -104,20 +110,22 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputJenisKelamin">Jenis Kelamin</label>
-                                <select id="inputJenisKelamin" name="jenis_kelamin" class="form-control @error('jenis_kelamin') is-invalid @enderror custom-select">
+                                <select id="inputJenisKelamin" name="jenis_kelamin"
+                                    class="form-control @error('jenis_kelamin') is-invalid @enderror custom-select">
                                     <option selected disabled>Pilih</option>
                                     <option>Laki-Laki</option>
                                     <option>Perempuan</option>
                                 </select>
-								@error('jenis_kelamin')
-									{{ $message }}
-								@enderror
+                                @error('jenis_kelamin')
+                                    {{ $message }}
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="inputTelpon">Nomor Telpon Pegawai</label>
-                                <input type="text" id="inputTelpon" name="telpon" class="form-control @error('telpon') is-invalid @enderror"
+                                <input type="text" id="inputTelpon" name="telpon"
+                                    class="form-control @error('telpon') is-invalid @enderror"
                                     placeholder="Nomor Telpon Pegawai" value="{{ old('telpon') }}">
-									@error('telpon')
+                                @error('telpon')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -125,14 +133,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputStatusNikah">Status Nikah</label>
-                                <select id="inputStatusNikah" name="status_nikah" class="form-control @error('status_nikah') is-invalid @enderror custom-select">
+                                <select id="inputStatusNikah" name="status_nikah"
+                                    class="form-control @error('status_nikah') is-invalid @enderror custom-select">
                                     <option selected disabled>Pilih</option>
                                     <option>Lajang</option>
                                     <option>Menikah</option>
                                     <option>Duda</option>
                                     <option>Janda</option>
                                 </select>
-								@error('status_nikah')
+                                @error('status_nikah')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
@@ -140,14 +149,29 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputDivisi">Divisi</label>
-                                <select id="inputDivisi" name="id_divisi" class="form-control @error('id_divisi') is-invalid @enderror custom-select">
+                                <select id="inputDivisi" name="id_divisi"
+                                    class="form-control @error('id_divisi') is-invalid @enderror custom-select">
                                     <option selected disabled>Pilih</option>
                                     @foreach ($divisi as $item)
                                         <option value={{ $item->id }}>
                                             {{ $item->nama }}</option>
                                     @endforeach
                                 </select>
-								@error('id_divisi')
+                                @error('id_divisi')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="fotopegawai">Foto Pegawai</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input @error('fotopegawai') is-invalid @enderror" id="fotopegawai" name="fotopegawai">
+                                        <label class="custom-file-label" for="fotopegawai">Choose file</label>
+                                    </div>
+                                </div>
+								@error('fotopegawai')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>

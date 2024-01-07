@@ -42,6 +42,7 @@ class PegawaiController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+		// return $request->file('fotopegawai')->store('fotoPegawai', 'public');
 		$validateData = $request->validate([
 			'id_divisi' => 'required',
 			'nip' => 'required|numeric',
@@ -54,6 +55,7 @@ class PegawaiController extends Controller
 			'telpon' => 'required|numeric',
 			'alamat' => 'required|min:3|max:300',
 			'status_nikah' => 'required',
+			'fotopegawai' => 'required|image|max:5000'
 		]);
 
 
@@ -69,6 +71,7 @@ class PegawaiController extends Controller
 			'telpon' => $request->telpon,
 			'alamat' => $request->alamat,
 			'status_nikah' => $request->status_nikah,
+			'fotopegawai' => $request->file('fotopegawai')->store('fotoPegawai', 'public')
 		]);
 
 		$details = [

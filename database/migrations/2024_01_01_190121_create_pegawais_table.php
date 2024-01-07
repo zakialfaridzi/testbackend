@@ -26,6 +26,7 @@ class CreatePegawaisTable extends Migration
             $table->string('telpon');
             $table->string('alamat');
             $table->enum('status_nikah', ['Menikah', 'Lajang', 'Duda', 'Janda']);
+			$table->string('fotopegawai')->nullable();
         });
     }
 

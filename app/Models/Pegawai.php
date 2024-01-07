@@ -23,6 +23,7 @@ class Pegawai extends Model
 		'telpon',
 		'alamat',
 		'status_nikah',
+		'fotopegawai'
 	];
 
 	public $timestamps = false;
